@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: border-box;
+  max-height: 95%;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: antiquewhite;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+}
+
+.page-title {
+  color: #282323;
+}
+.header{
+  padding:0
+}
+
+.scr {
+  height: 250px;
+}
+
+.main {
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+.jogada {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+}
+
+.jogada-player, .jogada-cpu{
+  display: flex;
+  width: 350px;
+  height: 30vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.opcao {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.opcao label{
+  font-weight: 600;
+  color: #282323;
+  font-size: 20px;
+}
+
+span {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+}
+
+.footer {
+  color: #282323;
+}
