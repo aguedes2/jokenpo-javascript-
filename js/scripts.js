@@ -6,8 +6,6 @@ const footer = document.querySelector('.footer')
 const img = new Image()
 const imgCPU = new Image()
 
-console.log(btnPedra)
-
 var opcoes = ['pedra', 'papel', 'tesoura']
 var opcaoP = ''
 var opcaoComp = ''
