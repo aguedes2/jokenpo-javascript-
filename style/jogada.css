@@ -1,0 +1,71 @@
+.resultado {
+  font-size: 2em;
+  font-weight: 900;
+  line-height: 1.5em;
+  border: 2px solid var(--cor-font-secundaria);
+  border-radius: 1em;
+  margin: .2em;
+  color: var(--cor-font-principal);
+  font-family: var(--font-secundaria);
+}
+
+.jogada {
+  padding: 1em;
+  display: flex;
+}
+
+.jogada__title {
+  color: var(--cor-font-principal);
+  font-family: var(--font-secundaria);
+  font-weight: 600;
+  font-size: 2em;
+  text-align: center;
+  margin: 0;
+}
+
+.jogadores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:80%;
+  margin: .5em;
+  gap: 1em;
+}
+
+.jogada__player,
+.jogada__cpu {
+  gap: .5em;
+}
+
+@media screen and (max-width: 400px) {
+  .resultado {
+    line-height: 1.5em;
+  }
+
+  .jogadores {
+    display: flex;
+    justify-content: space-between;
+    max-width: 45vw;
+    min-height: 200px;
+  }
+
+  .jogada__img {
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .jogadores {
+      max-width: 45vw;
+    }
+  
+    .jogada__img {
+      width: 10%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+  .jogada {
+      max-height: 280px;
+    }
+}

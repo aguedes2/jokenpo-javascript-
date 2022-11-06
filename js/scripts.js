@@ -1,6 +1,6 @@
-const player = document.querySelector('.jogada-player')
-const cpu = document.querySelector('.jogada-cpu')
-const footer = document.querySelector('.footer')
+const player = document.querySelector('.jogada__player')
+const cpu = document.querySelector('.jogada__cpu')
+const resultado = document.querySelector('.resultado')
 
 const img = new Image()
 const imgCPU = new Image()
@@ -8,32 +8,14 @@ const imgCPU = new Image()
 var opcoes = ['pedra', 'papel', 'tesoura']
 var opcaoP = ''
 var opcaoComp = ''
-
-// function jogarPedra() {
-//   img.src = `./imgs/${opcoes[0]}.png`
-//   player.appendChild(img)
-//   jogadaCPU()
-//   verificarVencedor(opcoes[0], opcoes[jogadaCPU()])
-// }
-
-// function jogarPapel() {
-//   img.src = `./imgs/${opcoes[1]}.png`
-//   player.appendChild(img)
-//   jogadaCPU()
-//   verificarVencedor(opcoes[1], opcoes[jogadaCPU()])
-// }
-
-// function jogarTesoura() {
-//   img.src = `./imgs/${opcoes[2]}.png`
-//   player.appendChild(img)
-//   jogadaCPU()
-//   verificarVencedor(opcoes[2], opcoes[jogadaCPU()])
-// }
-
-//Substitui 3 métodos por 1.
+resultado.textContent = 'Faça tua jogada'
 
 function jogar(jogada) {
   img.src = `./imgs/${jogada}.png`
+  img.style.maxWidth = '200px'
+  img.style.maxHeight = '200px'
+  img.style.width = '120px'
+  img.style.height = '120px'
   player.appendChild(img)
   jogadaCPU()
   verificarVencedor(jogada, opcoes[jogadaCPU()])
@@ -42,6 +24,10 @@ function jogar(jogada) {
 function jogadaCPU() {
   let opcaoCPU = Math.round(Math.random() * 2)
   imgCPU.src = `./imgs/${opcoes[opcaoCPU]}.png`
+  imgCPU.style.maxWidth = '200px'
+  imgCPU.style.maxHeight = '200px'
+  imgCPU.style.width = '120px'
+  imgCPU.style.height = '120px'
   cpu.appendChild(imgCPU)
   return opcaoCPU
 }
@@ -81,6 +67,7 @@ function verificarVencedor(p, cpu) {
       }
       break
   }
-
-  footer.innerHTML = `<h2>${msg}</h2>`
+  let cor = pVenceu ? '#65EB87' : empate ? '#F0757C' : '#F0757C'
+  resultado.textContent = `${msg}`
+  resultado.style.color = cor
 }

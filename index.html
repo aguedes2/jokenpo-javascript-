@@ -5,48 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/base.css" />
     <title>Jokenpo</title>
   </head>
   <body>
     <div class="container">
-      <header class="header"><h1 class="page-title">Jo-Ken-Po</h1></header>
+      <header class="header">
+        <img
+          src="./imgs/jokenpo.png"
+          alt="imagem do Jô Soares, Ken Masters (street fighter) e Paul (teletub)"
+          class="header__image"
+        />
+      </header>
       <main class="main">
-        <img src="./imgs/jokenpo.png" alt="" class="scr" />
         <div class="images">
-          <button class="btn btn-pedra" onclick="jogar('pedra')">
+          <button class="images__btn btn-pedra" onclick="jogar('pedra')">
             <div class="opcao">
-              <img src="./imgs/pedra.png" alt="" class="jo" id="pedra" />
+              <img src="./imgs/pedra.png" alt="" class="jo imagem" id="pedra" />
               <label for="pedra">Pedra</label>
             </div>
           </button>
-          <button class="btn btn-papel" onclick="jogar('papel')">
+          <button class="images__btn btn-papel" onclick="jogar('papel')">
             <div class="opcao">
-              <img src="./imgs/papel.png" alt="" class="ken" id="papel" />
+              <img
+                src="./imgs/papel.png"
+                alt=""
+                class="ken imagem"
+                id="papel"
+              />
               <label for="papel">Papel</label>
             </div>
           </button>
           <button
-            class="btn btn-tesoura"
+            class="images__btn btn-tesoura"
             id="tesoura"
             onclick="jogar('tesoura')"
           >
             <div class="opcao">
-              <img src="./imgs/tesoura.png" alt="" class="po" id="tesoura" />
+              <img
+                src="./imgs/tesoura.png"
+                alt=""
+                class="po imagem"
+                id="tesoura"
+              />
               <label for="tesoura">Tesoura</label>
             </div>
           </button>
         </div>
+        <section class="resultado"></section>
         <div class="jogada">
-          <div class="jogada-player">
-            <span>PLAYER</span>
-            <img src="" alt="" id="imgP" />
+          <div class="jogada__player jogadores">
+            <span class="jogada__title" id="placar-p">PLAYER</span>
+            <img src="" alt="" id="imgP" class="jogada__img" />
           </div>
-          <div class="jogada-cpu">
-            <span>CPU</span><img src="" alt="" id="imgC" />
+          <div class="jogada__cpu jogadores">
+            <span class="jogada__title" id="placar-cpu">CPU</span>
+            <img src="" alt="" id="imgC" class="jogada__img" />
           </div>
         </div>
-        <div class="footer"></div>
       </main>
     </div>
     <script src="./js/scripts.js"></script>

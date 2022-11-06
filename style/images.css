@@ -1,0 +1,54 @@
+.images {
+  display: flex;
+  justify-content: space-between;
+  max-width:706px;
+  height: 205px;
+  padding: .2em;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: .5em;
+}
+
+.opcao label {
+  font-weight: 600;
+  color: var(--cor-font-principal);
+  text-shadow: 1px 1px .3em var(--cor-font-principal);
+  font-size: 1.2em;
+}
+
+.images__btn {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.imagem {
+  width: 85%;
+  max-width: 772px;
+}
+
+@media screen and (max-width: 400px){
+  .images {
+    width: 98vw;
+    height: 20%;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .images {
+    width: 99vw;
+    height: 25%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .images {
+    width:99vw;
+  }
+}
