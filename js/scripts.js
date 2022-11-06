@@ -1,6 +1,8 @@
 const player = document.querySelector('.jogada__player')
 const cpu = document.querySelector('.jogada__cpu')
 const resultado = document.querySelector('.resultado')
+const placarPlayer = document.querySelector('#placar-p')
+const placarCPU = document.querySelector('#placar-cpu')
 
 const img = new Image()
 const imgCPU = new Image()
@@ -9,6 +11,8 @@ var opcoes = ['pedra', 'papel', 'tesoura']
 var opcaoP = ''
 var opcaoComp = ''
 resultado.textContent = 'Faça tua jogada'
+var placarP = 0
+var placarC = 0
 
 function jogar(jogada) {
   img.src = `./imgs/${jogada}.png`
@@ -37,37 +41,56 @@ function verificarVencedor(p, cpu) {
   let cpuVenceu = 'CPU Venceu!'
   let empate = 'Empatou!'
   let msg = ''
+  let vencedor = 'empate'
 
   switch (p) {
     case 'papel':
       if (cpu == 'pedra') {
-        msg = pVenceu
+        vencedor = 'player'
       } else if (cpu == 'tesoura') {
-        msg = cpuVenceu
-      } else {
-        msg = empate
+        vencedor = 'cpu'
       }
       break
     case 'tesoura':
       if (cpu == 'pedra') {
-        msg = cpuVenceu
+        vencedor = 'cpu'
       } else if (cpu == 'papel') {
-        msg = pVenceu
-      } else {
-        msg = empate
+        vencedor = 'player'
       }
       break
     case 'pedra':
       if (cpu == 'papel') {
-        msg = cpuVenceu
+        vencedor = 'cpu'
       } else if (cpu == 'tesoura') {
-        msg = pVenceu
-      } else {
-        msg = empate
+        vencedor = 'player'
       }
       break
   }
-  let cor = pVenceu ? '#65EB87' : empate ? '#F0757C' : '#F0757C'
+  let cor = '#000000'
+  if (vencedor === 'player') {
+    cor = '#36994F'
+    msg = pVenceu
+  } else if (vencedor === 'cpu') {
+    cor = '#F0757C'
+    msg = cpuVenceu
+  } else {
+    cor = '#AD8F2D'
+    msg = empate
+  }
+
+  atualizarPlacar(vencedor, msg, cor)
+}
+
+function atualizarPlacar(vencedor, msg, cor) {
+  if (vencedor === 'player') {
+    placarP++
+  } else if (vencedor === 'cpu') {
+    placarC++
+  }
+
+  placarPlayer.textContent = placarP
+  placarCPU.textContent = placarC
+
   resultado.textContent = `${msg}`
   resultado.style.color = cor
 }
