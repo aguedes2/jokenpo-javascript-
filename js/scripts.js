@@ -88,8 +88,8 @@ function atualizarPlacar(vencedor, msg, cor) {
     placarC++
   }
 
-  placarPlayer.textContent = placarP
-  placarCPU.textContent = placarC
+  placarPlayer.textContent = ` ${placarP}`
+  placarCPU.textContent = ` ${placarC}`
 
   resultado.textContent = `${msg}`
   resultado.style.color = cor
