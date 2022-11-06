@@ -21,8 +21,11 @@ function jogar(jogada) {
   img.style.width = '120px'
   img.style.height = '120px'
   player.appendChild(img)
-  jogadaCPU()
-  verificarVencedor(jogada, opcoes[jogadaCPU()])
+  resultado.textContent = 'Rufem os tambores'
+  setTimeout(() => {
+    jogadaCPU()
+    verificarVencedor(jogada, opcoes[jogadaCPU()])
+  }, 1000)
 }
 
 function jogadaCPU() {
