@@ -19,13 +19,26 @@
       </header>
       <main class="main">
         <div class="images">
-          <button class="images__btn btn-pedra" onclick="jogar('pedra')">
+          <button
+            class="images__btn btn-pedra"
+            onclick="jogar('pedra')"
+            jogada="pedra"
+          >
             <div class="opcao">
-              <img src="./imgs/pedra.png" alt="" class="jo imagem" id="pedra" />
+              <img
+                src="./imgs/pedra.png"
+                alt="imagem de mão fechada representando pedra"
+                class="jo imagem"
+                id="pedra"
+              />
               <label for="pedra">Pedra</label>
             </div>
           </button>
-          <button class="images__btn btn-papel" onclick="jogar('papel')">
+          <button
+            class="images__btn btn-papel"
+            onclick="jogar('papel')"
+            jogada="papel"
+          >
             <div class="opcao">
               <img
                 src="./imgs/papel.png"
@@ -40,11 +53,12 @@
             class="images__btn btn-tesoura"
             id="tesoura"
             onclick="jogar('tesoura')"
+            jogada="tesoura"
           >
             <div class="opcao">
               <img
                 src="./imgs/tesoura.png"
-                alt=""
+                alt="imagem de mão em formato de tesoura"
                 class="po imagem"
                 id="tesoura"
               />
@@ -59,14 +73,26 @@
               PLAYER
               <p id="placar-p"></p>
             </span>
-            <img src="" alt="" id="imgP" class="jogada__img" />
+            <img
+              src=""
+              alt=""
+              id="imgP"
+              class="jogada__img"
+              data-player="jogada-player"
+            />
           </div>
           <div class="jogada__cpu jogadores">
             <span class="jogada__title">
               CPU
               <p id="placar-cpu"></p>
             </span>
-            <img src="" alt="" id="imgC" class="jogada__img" />
+            <img
+              src=""
+              alt=""
+              id="imgC"
+              class="jogada__img"
+              data-cpu="jogada-cpu"
+            />
           </div>
         </div>
       </main>

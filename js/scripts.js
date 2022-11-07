@@ -15,6 +15,7 @@ var placarP = 0
 var placarC = 0
 
 function jogar(jogada) {
+  imgCPU.style.display = 'none'
   img.src = `./imgs/${jogada}.png`
   img.style.maxWidth = '200px'
   img.style.maxHeight = '200px'
@@ -23,6 +24,7 @@ function jogar(jogada) {
   player.appendChild(img)
   resultado.textContent = 'Rufem os tambores'
   setTimeout(() => {
+    imgCPU.style.display = 'block'
     jogadaCPU()
     verificarVencedor(jogada, opcoes[jogadaCPU()])
   }, 1000)
